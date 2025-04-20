@@ -59,16 +59,15 @@ function Predictor() {
         </div>
 
         <div className="predictor-core">
-        <select value={awayTeam} onChange={e => setAwayTeam(e.target.value)}>
-  <option>Select Away Team</option>
-  {teams.map(team => <option key={team}>{team}</option>)}
-</select>
-<br />
-<select value={homeTeam} onChange={e => setHomeTeam(e.target.value)}>
-  <option>Select Home Team</option>
-  {teams.map(team => <option key={team}>{team}</option>)}
-</select>
-
+          <select value={homeTeam} onChange={e => setHomeTeam(e.target.value)}>
+            <option>Select Home Team</option>
+            {teams.map(team => <option key={team}>{team}</option>)}
+          </select>
+          <br />
+          <select value={awayTeam} onChange={e => setAwayTeam(e.target.value)}>
+            <option>Select Away Team</option>
+            {teams.map(team => <option key={team}>{team}</option>)}
+          </select>
           <br />
           <button onClick={handlePredict} disabled={!homeTeam || !awayTeam}>Predict</button>
 
