@@ -28,11 +28,8 @@ function Predictor() {
     }
   };
 
-  const isDisabled = !homeTeam || !awayTeam || homeTeam === awayTeam;
-
   return (
     <div style={{ maxWidth: '500px', margin: '40px auto', textAlign: 'center' }}>
-      <h2>⚽ Premier League Match Predictor</h2>
       <select value={homeTeam} onChange={e => setHomeTeam(e.target.value)}>
         <option>Select Home Team</option>
         {teams.map(team => <option key={team}>{team}</option>)}
@@ -43,17 +40,17 @@ function Predictor() {
         {teams.map(team => <option key={team}>{team}</option>)}
       </select>
       <br /><br />
-      <button onClick={handlePredict} disabled={isDisabled}>Predict</button>
+      <button onClick={handlePredict} disabled={!homeTeam || !awayTeam}>Predict</button>
 
       {prediction && (
         <div style={{ marginTop: '30px' }}>
           <h3>Prediction:</h3>
-          <p>✅ Over 1.5 Goals: {(prediction.over_15 * 100).toFixed(0)}%</p>
-          <p>⚽ Over 2.5 Goals: {(prediction.over_25 * 100).toFixed(0)}%</p>
-          <p>🤝 BTTS (Yes): {(prediction.btts * 100).toFixed(0)}%</p>
-          <p>🏠 Home Win: {(prediction.home_win * 100).toFixed(0)}%</p>
-          <p>🤝 Draw: {(prediction.draw * 100).toFixed(0)}%</p>
-          <p>🛫 Away Win: {(prediction.away_win * 100).toFixed(0)}%</p>
+          <p>✅ Over 1.5 Goals: {Math.round(prediction.over_15 * 100)}%</p>
+          <p>⚽ Over 2.5 Goals: {Math.round(prediction.over_25 * 100)}%</p>
+          <p>🤝 BTTS (Yes): {Math.round(prediction.btts * 100)}%</p>
+          <p>🏠 Home Win: {Math.round(prediction.away_win * 100)}%</p>
+          <p>🤝 Draw: {Math.round(prediction.draw * 100)}%</p>
+          <p>🛫 Away Win: {Math.round(prediction.home_win * 100)}%</p>
           <p>📐 Predicted Corners: {prediction.corners.toFixed(1)}</p>
         </div>
       )}
@@ -62,4 +59,3 @@ function Predictor() {
 }
 
 export default Predictor;
-
