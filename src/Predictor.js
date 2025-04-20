@@ -9,27 +9,26 @@ const teams = [
 ];
 
 const playerImages = {
-    'Arsenal': '/players/saka.png',
-    'Aston Villa': '/players/watkins.png',
-    'Bournemouth': '/players/kluivert.png',
-    'Brentford': '/players/mbeumo.png',
-    'Brighton': '/players/mitoma.png',
-    'Chelsea': '/players/palmer.png',
-    'Crystal Palace': '/players/mateta.png',
-    'Everton': '/players/tarkowski.png',
-    'Fulham': '/players/iwobi.png',
-    'Liverpool': '/players/salah.png',
-    'Man City': '/players/haaland.png',
-    'Man United': '/players/bruno.png',
-    'Newcastle': '/players/isak.png',
-    "Nott'm Forest": '/players/wood.png',
-    'Tottenham': '/players/maddison.png',
-    'West Ham': '/players/bowen.png',
-    'Wolves': '/players/cunha.png',
-    'Leicester': '/players/vardy.png',
-    'Ipswich': '/players/delap.png', // placeholder
-  };
-  
+  'Arsenal': '/players/saka.png',
+  'Aston Villa': '/players/watkins.png',
+  'Bournemouth': '/players/kluivert.png',
+  'Brentford': '/players/mbeumo.png',
+  'Brighton': '/players/mitoma.png',
+  'Chelsea': '/players/palmer.png',
+  'Crystal Palace': '/players/mateta.png',
+  'Everton': '/players/tarkowski.png',
+  'Fulham': '/players/iwobi.png',
+  'Liverpool': '/players/salah.png',
+  'Man City': '/players/haaland.png',
+  'Man United': '/players/bruno.png',
+  'Newcastle': '/players/isak.png',
+  "Nott'm Forest": '/players/wood.png',
+  'Tottenham': '/players/maddison.png',
+  'West Ham': '/players/bowen.png',
+  'Wolves': '/players/cunha.png',
+  'Leicester': '/players/vardy.png',
+  'Ipswich': '/players/delap.png', // placeholder
+};
 
 function Predictor() {
   const [homeTeam, setHomeTeam] = useState('');
@@ -74,13 +73,12 @@ function Predictor() {
           {prediction && (
             <div className="results">
               <p>✅ Over 1.5 Goals: {(prediction.over_15 * 100).toFixed(0)}%</p>
-<p>⚽ Over 2.5 Goals: {(prediction.over_25 * 100).toFixed(0)}%</p>
-<p>🤝 BTTS (Yes): {(prediction.btts * 100).toFixed(0)}%</p>
-<p>🏠 Home Win: {(prediction.home_win * 100).toFixed(0)}%</p>
-<p>🤝 Draw: {(prediction.draw * 100).toFixed(0)}%</p>
-<p>🛫 Away Win: {(prediction.away_win * 100).toFixed(0)}%</p>
-<p>📐 Predicted Corners: {prediction.corners.toFixed(2)}</p>
-
+              <p>⚽ Over 2.5 Goals: {(prediction.over_25 * 100).toFixed(0)}%</p>
+              <p>🤝 BTTS (Yes): {(prediction.btts * 100).toFixed(0)}%</p>
+              <p>🏠 {homeTeam} Win: {(prediction.home_win * 100).toFixed(0)}%</p>
+              <p>🤝 Draw: {(prediction.draw * 100).toFixed(0)}%</p>
+              <p>🛫 {awayTeam} Win: {(prediction.away_win * 100).toFixed(0)}%</p>
+              <p>📐 Predicted Corners: {prediction.corners.toFixed(2)}</p>
             </div>
           )}
         </div>
