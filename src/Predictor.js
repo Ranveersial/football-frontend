@@ -13,7 +13,7 @@ const playerImages = {
   'Aston Villa': '/players/watkins.png',
   'Bournemouth': '/players/kluivert.png',
   'Brentford': '/players/mbeumo.png',
-  'Brighton': '/players/mitoma.png',
+  'Brighton': '/players/minteh.png',
   'Chelsea': '/players/palmer.png',
   'Crystal Palace': '/players/mateta.png',
   'Everton': '/players/tarkowski.png',
