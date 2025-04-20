@@ -98,7 +98,35 @@ button:hover {
   margin: 6px 0;
   font-size: 1rem;
 }
-.right-player .player-img {
-  max-width: 330px;
+/* ====== Mobile Styles ====== */
+@media screen and (max-width: 768px) {
+  .content {
+    flex-direction: column;
+    gap: 20px;
+  }
+
+  .player-img {
+    max-height: 220px;
+    max-width: 200px;
+  }
+
+  .predictor-core {
+    width: 100%;
+    max-width: 300px;
+  }
+
+  .team-side {
+    width: 100%;
+    justify-content: center;
+  }
+
+  .results p {
+    font-size: 0.95rem;
+  }
+
+  .predictor-container h1 {
+    font-size: 1.8rem;
+    margin-bottom: 20px;
+  }
 }
 
