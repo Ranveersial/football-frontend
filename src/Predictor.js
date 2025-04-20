@@ -75,9 +75,9 @@ function Predictor() {
               <p>✅ Over 1.5 Goals: {(prediction.over_15 * 100).toFixed(0)}%</p>
               <p>⚽ Over 2.5 Goals: {(prediction.over_25 * 100).toFixed(0)}%</p>
               <p>🤝 BTTS (Yes): {(prediction.btts * 100).toFixed(0)}%</p>
-              <p>🏠 {homeTeam} Win: {(prediction.home_win * 100).toFixed(0)}%</p>
+              <p>🏠 {homeTeam} Win: {(prediction.away_win * 100).toFixed(0)}%</p>
               <p>🤝 Draw: {(prediction.draw * 100).toFixed(0)}%</p>
-              <p>🛫 {awayTeam} Win: {(prediction.away_win * 100).toFixed(0)}%</p>
+              <p>🛫 {awayTeam} Win: {(prediction.home_win * 100).toFixed(0)}%</p>
               <p>📐 Predicted Corners: {prediction.corners.toFixed(2)}</p>
             </div>
           )}
