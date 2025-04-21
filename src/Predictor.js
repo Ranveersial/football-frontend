@@ -35,6 +35,17 @@ function Predictor() {
   const [awayTeam, setAwayTeam] = useState('');
   const [prediction, setPrediction] = useState(null);
 
+  // 🔁 Warm up the backend on first visit
+  useEffect(() => {
+    fetch('https://football-backend-r0kg.onrender.com/predict', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({ home_team: 'Arsenal', away_team: 'Chelsea' })
+    })
+      .then(() => console.log('⚡ Backend wake-up ping sent'))
+      .catch(err => console.log('Backend wake-up failed (cold start):', err));
+  }, []);
+  
   const handlePredict = async () => {
     try {
       const response = await fetch('https://football-backend-r0kg.onrender.com/predict', {
