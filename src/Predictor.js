@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import './App.css';
 
 const teams = [
@@ -45,7 +45,7 @@ function Predictor() {
       .then(() => console.log('⚡ Backend wake-up ping sent'))
       .catch(err => console.log('Backend wake-up failed (cold start):', err));
   }, []);
-  
+
   const handlePredict = async () => {
     try {
       const response = await fetch('https://football-backend-r0kg.onrender.com/predict', {
